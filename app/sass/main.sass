@@ -1,0 +1,739 @@
+@import "fonts"
+@import "libs"
+@import "vars"
+
+*
+	box-sizing: border-box
+	&:before, &:after
+		box-sizing: border-box
+
+html, body
+	height: 100%
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.75
+	font-family: 'ProximaNova', sans-serif
+	overflow-x: hidden
+	color: #000
+	&.ishome
+		.site-header
+			min-height: 762px
+			background-color: $accent
+			color: #fff
+			.top-line
+				padding-top: 24px
+				width: 100%
+				z-index: 1
+section
+	background-color: #fff
+
+.top 
+	color: $accent
+	position: fixed
+	bottom: -100px
+	right: -100px
+	width: 50px
+	height: 50px
+	background-color: $light
+	z-index: 99
+	border-radius: 10em
+	line-height: 50px
+	text-align: center
+	font-size: 25px
+	opacity: 1
+	transition: all .25s ease
+	cursor: pointer
+	&.active 
+		bottom: 25px
+		right: 25px
+	&:hover 
+		background-color: $accent
+		opacity: 1
+		color: #fff
+	
+
+
+.grid
+	display: grid
+
+.site-header
+	min-height: 100vh
+	background-size: cover
+	background-position: center
+	position: relative
+
+.logo
+	margin-left: 282px
+	img
+		width: 330px
+		height: auto
+
+
+.header_contacts
+	position: absolute
+	right: 357px
+	width: 230px
+	height: 46px
+	text-align: right
+	line-height: 1.3
+	margin-top: 58px
+	&_tel
+		font-size: 28px
+		white-space: nowrap
+		a
+			text-decoration: none
+			color: inherit
+	&_backcall
+		font-size: 17px
+		white-space: nowrap
+		a
+			color: inherit
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+
+.text-center
+	text-align: center
+
+.hamburger
+	right: 226px
+	position: absolute
+	top: 48px
+	display: block
+    width: 63px
+    height: 63px
+	border: 4px solid #fff
+	border-radius: 50%
+	.hamburger-box
+		top: 2px
+		left: 1px
+	.hamburger-inner, .hamburger-inner:after, .hamburger-inner:before
+		position: absolute
+		border-radius: 0
+		width: 35px
+		background-color: #fff !important
+
+.mm-menu a, .mm-menu a:active, .mm-menu a:hover, .mm-menu a:link, .mm-menu a:visited
+	transition: color 0.5s ease
+
+.mm-listitem:after
+	    left: 40px;
+
+.mm-listitem_selected > .mm-listitem__text
+    background: rgba(214, 238, 241, 0.8)
+
+.mm-listview
+	> li
+		> a 
+			transition: color 1s ease
+			padding:
+				left: 14%
+				right: 14%
+				top: 8px
+		&:hover
+			color: #3eb5bf
+		&.active
+			&>a
+			color: red
+			transition: color .3s
+
+.mm-navbar 
+	border: 0
+
+.mm-navbar .mm-navbar__title img
+	width: 245px
+	height: auto
+	margin: 15px 0 30px
+	
+.header-content
+	grid-template-columns: 44%
+	grid-gap: 10px
+	color: #fff
+	align-content: center
+	text-align: left
+	margin-left: 258px
+	padding:
+		top: 20px
+		bottom: 200px
+		left: 20px
+	h1
+		font-size: 60px
+		font-family: 'ProximaNova', sans-serif
+		font-weight: bold
+		margin: 20px 0
+		line-height: 1
+		text-transform: uppercase
+	h3
+		font-size: 33px
+		font-family: 'ProximaNova', sans-serif
+		font-weight: 300
+		margin: 20px 0
+		line-height: 1.5
+
+.title
+	font-size: 30px
+	color: #000
+	text-transform: uppercase
+	padding: $gutter
+
+.landing-section
+	padding: 50px 20px
+
+.container
+	max-width: 1280px
+	margin: auto
+	padding: 0 $gutter
+
+.button
+	position: relative
+	display: inline-block
+	padding: 10px 40px
+	color: #000
+	border: 1px solid
+	font-size: 16px
+	text-transform: uppercase
+	border-radius: 0
+	overflow: hidden
+	background-color: #ebedec
+	text-decoration: none
+	outline: none
+	cursor: pointer
+	&:hover, &:active
+		opacity: 1
+		color: #000
+		border: 1px solid #000
+		-webkit-animation: hue 60s infinite linear
+	&:active
+		background-image: none
+		outline: 0
+		-webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125)
+		box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125)
+	&:hover:after
+		right: 125%
+	&:after
+		content: ''
+		width: 45px
+		height: 135px
+		display: block
+		background: rgba(255, 255, 255, 0.25)
+		right: -100px
+		position: absolute
+		top: -24px
+		transform: rotate(35deg)
+		transition: all 0.9s ease
+
+
+.services
+	grid-gap: 10px
+	grid-template-columns: repeat(3, 420px)
+	grid-template-rows: repeat(3, 200px)
+
+.services-item
+	background-color: #e8e8e8
+	text-decoration: none
+	grid-template-rows: 1fr 1fr
+	transition: background-color .25s ease
+	overflow: hidden
+	color: #333
+	&:nth-child(4)
+		background-color: #d7d7d7
+	&:nth-child(5)
+		background-color: #d7d7d7
+	&:nth-child(6)
+		background-color: #d7d7d7
+	&:nth-child(7)
+		background-color: #bdbdbd
+	&:nth-child(8)
+		background-color: #bdbdbd
+	&:nth-child(9)
+		background-color: #bdbdbd
+	&:hover
+		background-color: #a8d3d7
+		h2
+			color: #000
+		.services-item-icon
+			transform: scale(1.05) translateY(-6.5px)
+			&:after 
+    			background: #fff
+    			content: ""
+    			height: 350px
+    			left: -480px
+    			opacity: .2
+    			position: absolute
+    			top: 0px
+    			transform: rotate(-20deg)
+    			width: 480px
+	&-icon
+		width: 140px
+		height: 140px
+		background-size: cover
+		transition: transform .25s ease
+		&:nth-child(2)
+		grid-row: 1
+		align-self: start
+		justify-self: end
+	&-text
+		position: absolute
+		padding: 10px
+	&-header
+		width: 380px
+		font-size: 22px
+		font-weight: 400
+		text-transform: uppercase
+		color: #000
+		line-height: 1.2
+		margin-left: 20px
+		transition: color .25s ease
+	&-paragraph
+		width: 300px
+		line-height: 1.2
+		margin:
+			top: 15px
+			left: 20px
+
+.place
+	grid-gap: 10px
+	grid-template-columns: repeat(5, 1fr)
+
+.place-item
+	width: 240px
+	height: 240px
+	text-align: left
+	border-radius: 50%
+	transition: background-color .25s ease
+	background-size: cover
+	background-position: center
+	&-title
+		position: absolute
+		padding-top: 160px
+		p
+		font-size: 21px
+		font-weight: 400
+		color: #000
+		line-height: 1
+		font-family: 'ProximaNovaSemibold', sans-serif
+
+
+.s-suppliers
+	.container
+		grid-template-columns: 1fr 1fr
+		grid-template-areas: "reliable manufacturers" "carousel carousel"
+		margin:
+			top: 50px
+		.reliable
+			grid-area: reliable
+			margin-left: 0px
+			h2
+				font-size: 30px
+				text-transform: uppercase
+				line-height: 1.3
+				margin:
+					top: 0px
+			p
+				font-size: 16px
+				width: 340px
+				line-height: 1.3
+				margin:
+					top: 0px
+					bottom: 0
+		.manufacturers
+			grid-area: manufacturers
+			grid-template-columns: 280px 1fr
+			width: 860px
+			height: 405px
+			border: 1px solid #b4b4b4
+			&_log
+				align-content: center
+				text-align: center
+				height: 250px
+				width: 250px
+				background-size: contain
+				background-position: center
+				background-repeat: no-repeat
+				&:nth-child(1)
+					align-self: center
+					justify-self: center
+			&_info
+				align-content: center
+				height: 200px
+				width: 500px
+				&:nth-child(2)
+					align-self: center
+					justify-self: center
+					h6
+						margin: 0
+						font-size: 18px
+						font-weight: 600
+						text-transform: uppercase
+					p
+						color: #656565
+						padding-top: 0px
+						font-size: 15px
+
+.logo_carousel
+	grid-area: carousel
+	grid-template-columns: repeat(8, 1fr)
+	grid-template-rows: 1fr
+	grid-column: 1 / 8
+	.partner_logo
+		min-height: 150px
+		&_icon
+			position: absolute
+			height: 150px
+			width: 150px
+			background-size: contain
+			background-position: center
+			background-repeat: no-repeat
+			-webkit-filter: grayscale(100%)
+  			-moz-filter: grayscale(100%)
+  			-ms-filter: grayscale(100%)
+  			-o-filter: grayscale(100%)
+  			filter: grayscale(100%)
+  			filter: gray /* IE 6-9 */
+			transition: all 0.5s ease-out
+			&:hover
+  				filter: none
+
+.s-instal_work
+	min-width: 100%
+	background-color: #ebedec
+	align-self: center
+	.container
+		min-height: 440px
+		grid-template-columns: 1fr 1fr
+		.instal_img
+			grid-column: 1
+			width: 650px
+			background-size: cover
+			background-position: center
+		.instal_text
+			grid-column: 2
+			width: 600px
+			h2
+				margin-top: 20px
+    			padding: 20px 20px 0px 20px
+			p
+				padding-left: 20px
+				font-size: 18px
+				line-height: 1.3
+		.button
+			margin:
+				top: 20px
+				left: 20px
+
+.s-warranty
+	min-height: 600px
+	align-self: center
+	padding-top: 120px
+	padding-bottom: 120px
+	.container
+		min-height: 440px
+		width: 1280px
+		grid-template-columns: 1fr 1fr
+		.license
+			padding-left: 35px
+			grid-column: 1
+			width: 640px
+			height: 430px
+			border: 1px solid #b4b4b4
+			grid-template-columns: 250px 1fr
+			&_text
+				h2
+					padding: 20px 0px 0px 0px
+				P
+					font-size: 18px
+					line-height: 1.3
+			&_img
+				background-size: contain
+				background-position: center
+				background-repeat: no-repeat
+				align-self: center
+				justify-self: center
+				width: 300px
+				height: 300px
+
+		.warranty
+			padding: 15px 25px
+			grid-column: 2
+			width: 640px
+			img
+				float: left
+				height: 85px
+				width: auto
+				opacity: 0.5
+			h2
+				margin-top: 0px
+			P
+				padding: 0px 20px 0px 20px
+				font-size: 22px
+				line-height: 1.5
+.s-reviews
+	min-height: 566px
+	min-width: 100%
+	background-color: $light
+	align-self: center
+	justify-self: center
+	.container
+		align-self: center
+		justify-self: center
+		.reviews_carousel_box
+			width: 1024px
+			height: 375px
+			background-color: #ffffff
+			&_text
+				width: 100%
+				padding:
+					top: 50px
+					right: 10%
+				font-size: 16px
+				font-weight: 300
+				line-height: 1.3
+			&_title
+				font-family: "ProximaNovaSemibold"
+				font-weight: 400
+			img
+				float: left
+				padding:
+					left: 30px
+					right: 30px
+					bottom: 20px
+		.slider_control
+			grid-template-columns: repeat(3, 1fr)
+			.slick-dotted
+				position: relative
+				display: inline-block
+			.arrow_prev
+				position: relative
+				display: inline-block
+				text-align: right
+				.fal
+					font-size: 50px
+			.arrow_next
+				.fal
+					position: relative
+					display: inline-block
+					font-size: 50px
+
+.slick-dots
+	bottom: 28px
+	li
+		height: 12px
+		button
+			&:hover, &:focus
+				outline: none
+			&:hover:before, &:focus:before
+				opacity: 1
+				background: #579da2
+			&:before
+				content: ''
+				width: 13px
+				height: 13px
+				background: #000
+				opacity: 0.13
+				border-radius: 0%
+				top: 100%
+
+
+.s-portfolio
+	min-height: 710px
+	align-self: center
+	.our_works
+		grid-template-columns: repeat(4, 1fr)
+		position: relative
+		align-self: center
+		justify-self: center
+		padding: 0 20px
+		&_item
+			display: block
+			position: relative
+			background-color: $light
+			h2
+				line-height: 1.2
+			a
+				display: block
+				width: 320px
+				height: 250px
+				background-size: cover
+				background-position: center
+			&_img
+				&:before
+					position: absolute
+					width: 32px
+					height: 32px
+					top: 40%
+					left: 50%
+					margin: -14px 0 0 -16px
+					background: url(data:image/svg+xml;utf8,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%0A%3C%21--%20Generator%3A%20Adobe%20Illustrator%2017.1.0%2C%20SVG%20Export%20Plug-In%20.%20SVG%20Version%3A%206.00%20Build%200%29%20%20--%3E%0A%3C%21DOCTYPE%20svg%20PUBLIC%20%22-//W3C//DTD%20SVG%201.1//EN%22%20%22http%3A//www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd%22%3E%0A%3Csvg%20version%3D%221.1%22%0A%09%20id%3D%22svg2%22%20xmlns%3Adc%3D%22http%3A//purl.org/dc/elements/1.1/%22%20xmlns%3Acc%3D%22http%3A//creativecommons.org/ns%23%22%20xmlns%3Ardf%3D%22http%3A//www.w3.org/1999/02/22-rdf-syntax-ns%23%22%20xmlns%3Asvg%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Asodipodi%3D%22http%3A//sodipodi.sourceforge.net/DTD/sodipodi-0.dtd%22%20xmlns%3Ainkscape%3D%22http%3A//www.inkscape.org/namespaces/inkscape%22%20inkscape%3Aversion%3D%220.48.4%20r9939%22%20sodipodi%3Adocname%3D%22icon-fullscreen.svg%22%0A%09%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20x%3D%220px%22%20y%3D%220px%22%20viewBox%3D%220%200%20960%20560%22%0A%09%20enable-background%3D%22new%200%200%20960%20560%22%20xml%3Aspace%3D%22preserve%22%3E%0A%3Csodipodi%3Anamedview%20%20borderopacity%3D%221%22%20pagecolor%3D%22%23ffffff%22%20bordercolor%3D%22%23666666%22%20objecttolerance%3D%2210%22%20gridtolerance%3D%2210%22%20guidetolerance%3D%2210%22%20showgrid%3D%22false%22%20fit-margin-top%3D%220%22%20fit-margin-left%3D%220%22%20inkscape%3Azoom%3D%227.375%22%20inkscape%3Acx%3D%22-5.1525424%22%20inkscape%3Acy%3D%2216%22%20id%3D%22namedview11%22%20inkscape%3Awindow-x%3D%22-8%22%20inkscape%3Awindow-y%3D%22-8%22%20fit-margin-right%3D%220%22%20inkscape%3Apageopacity%3D%220%22%20fit-margin-bottom%3D%220%22%20inkscape%3Awindow-width%3D%221366%22%20inkscape%3Awindow-height%3D%22706%22%20inkscape%3Awindow-maximized%3D%221%22%20inkscape%3Apageshadow%3D%222%22%20inkscape%3Acurrent-layer%3D%22svg2%22%3E%0A%09%3C/sodipodi%3Anamedview%3E%0A%3Cg%3E%0A%09%3Crect%20x%3D%22220%22%20y%3D%22260%22%20fill%3D%22%23FFFFFF%22%20width%3D%22536%22%20height%3D%2224%22/%3E%0A%3C/g%3E%0A%3Cg%3E%0A%09%3Crect%20x%3D%22476%22%20y%3D%224%22%20fill%3D%22%23FFFFFF%22%20width%3D%2224%22%20height%3D%22556%22/%3E%0A%3C/g%3E%0A%3C/svg%3E%0A)  no-repeat
+					content: ''
+					opacity: 0
+					z-index: 1
+					transition: all 0.3s linear
+				&:hover:before
+					top: 50%
+					opacity: 1
+				&:after
+					position: absolute
+					width: 100%
+					top: 0
+					bottom: 0
+					background: rgba(0, 0, 0, 0.5)
+					content: ''
+					opacity: 0
+					transition: all 0.3s linear
+				&:hover:after
+					opacity: 1
+					
+
+.s-contact
+	box-shadow: 0 0 4px rgba(0, 0, 0, .25)
+	min-height: 666px
+	align-self: center
+	background-color: $gray
+	border-bottom: 2px solid rgba(151, 151, 151, 0.2)
+	.container
+		min-height: 500px
+		width: 1280px
+		grid-template-columns: 466px 1fr
+		h2
+			margin-top: 10px
+			padding: 0
+			font-size: 35px
+		.contacts
+			padding-left: 75px
+			border-right: 1px solid #c5c5c5
+			&-tel
+				white-space: nowrap
+				font-weight: 400
+				font-size: 31px
+				line-height: 1.3
+				margin: 0
+				a
+					text-decoration: none
+					color: inherit
+			&-backcall
+				white-space: nowrap
+				line-height: 1.3
+				font-size: 17px
+				a
+					color: inherit
+			&-email
+				display: inline-block
+				white-space: nowrap
+				font-weight: 400
+				font-size: 31px
+				margin:
+					top: 55px
+					bottom: 0
+				a
+					text-decoration: none
+					color: inherit
+			&-answers
+				font-size: 17px
+			&_form
+				padding-left: 50px
+				&-title
+					font-weight: 400
+					font-size: 35px
+					text-transform: uppercase
+					margin-top: 10px
+				&-paragraph
+					font-weight: 400
+					font-size: 18px
+					line-height: 1.2
+					text-transform: none
+				&-btn
+					grid-template-columns: 200px 1fr
+					.button
+						width: 200px
+					a
+						color: inherit
+				&-rules
+					font-weight: 400
+					font-size: 15px
+					line-height: 1.2
+					text-transform: none
+					color: #838383
+					padding-left: 20px
+					align-self: center
+			
+
+input, textarea
+	border: none
+	padding: 15px
+	margin: 10px 0px
+	font-size: 15px
+	width: 100%
+	outline: none
+	transition: background-color .25s ease
+	&:focus
+		background-color: $light
+	&::placeholder
+		color: lighten(#828282, 0%)
+
+.socket
+	min-height: 200px
+	align-self: center
+	&-container
+		grid-template-columns: 20% 30% 30% 20%
+		width: 1280px
+		margin: auto
+		padding: 0 $gutter
+	&_logo
+		align-self: center
+		img
+			width: 246px
+			margin: 0
+	&_contacts
+		align-self: center
+		text-align: center
+		line-height: 1.3
+		&_tel
+			font-size: 28px
+			a
+				text-decoration: none
+				color: inherit
+		&_backcall
+			white-space: nowrap
+			font-size: 15px
+			a
+				color: inherit
+	&_agreement
+		align-self: center
+		text-align: center
+		font-size: 14px
+		a
+    		cursor: pointer
+    		color: inherit
+	&_site_dev
+		line-height: 1
+		align-self: center
+		padding: 3px
+		line-height: 1.3em
+		font-size: 12px
+		grid-template-columns: 1fr min(35px)
+		p
+			text-align: right
+			align-self: center
+			padding-right: 3px
+			a
+    			cursor: pointer
+    			text-decoration: none
+    			color: inherit
+		span
+			text-align: center
+			align-self: center
+			img
+				width: 30px
+				height: 30px
+				cursor: pointer
+				padding: 0px 0px
+
+
+	
+	
+
+@import "media" // Всегда в конце
